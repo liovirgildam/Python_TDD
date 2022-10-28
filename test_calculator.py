@@ -9,6 +9,10 @@ class TestCalculator(unittest.TestCase):
     self.assertEqual(result,15)
     """
     self.assertEqual(calculator.add(10,5),15)
+    self.assertEqual(calculator.add(-1,1),0)
+    self.assertEqual(calculator.add(-1,-5),-6)
+    
+    
 
 if __name__ == '__main__':
   unittest.main()
