@@ -2,11 +2,23 @@ import unittest
 from employee import Employee
 
 class TestEmployee(unittest.TestCase):
+
+    # method that runs before each class 
+    @classmethod
+    def setUpClass(cls):
+        print('setupClass\n')
+    # method that runs after each class
+    @classmethod
+    def tearDownClass(cls):
+        print('teardownClass')
+
+    # method that runs before each test
     def setUp(self):
         print('setUp')
         self.employee_1 = Employee('Lia', 'Addai', 50000)
         self.employee_2 = Employee('Lili', 'Mendonca', 60000)
     
+    # method that runs after each test
     def tearDown(self):
         print('tearDown\n')
         pass
