@@ -29,5 +29,12 @@ class TestEmployee(unittest.TestCase):
         self.assertEqual(self.employee_1.fullname, 'Serwaa Addai')
         self.assertEqual(self.employee_2.fullname, 'Liovirgilda Mendonca')
 
+    def test_apply_raise(self):
+        self.employee_1.apply_pay_raise()
+        self.employee_2.apply_pay_raise()
+
+        self.assertEqual(self.employee_1.pay, 52500)
+        self.assertEqual(self.employee_2.pay, 63000)
+
 if __name__ == '__main__':
     unittest.main()
