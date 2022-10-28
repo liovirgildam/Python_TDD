@@ -3,13 +3,16 @@ from employee import Employee
 
 class TestEmployee(unittest.TestCase):
     def setUp(self):
+        print('setUp')
         self.employee_1 = Employee('Lia', 'Addai', 50000)
         self.employee_2 = Employee('Lili', 'Mendonca', 60000)
     
     def tearDown(self):
+        print('tearDown\n')
         pass
 
     def test_email(self):
+        print('Test email')
         self.assertEqual(self.employee_1.email, 'Lia.Addai@email.com')
         self.assertEqual(self.employee_2.email, 'Lili.Mendonca@email.com')
 
@@ -20,6 +23,7 @@ class TestEmployee(unittest.TestCase):
         self.assertEqual(self.employee_2.email, 'Liovirgilda.Mendonca@email.com')
 
     def test_fullname(self):
+        print('Test fullname')
         self.assertEqual(self.employee_1.fullname, 'Lia Addai')
         self.assertEqual(self.employee_2.fullname, 'Lili Mendonca')
 
@@ -30,6 +34,7 @@ class TestEmployee(unittest.TestCase):
         self.assertEqual(self.employee_2.fullname, 'Liovirgilda Mendonca')
 
     def test_apply_raise(self):
+        print('Test apply raise')
         self.employee_1.apply_pay_raise()
         self.employee_2.apply_pay_raise()
 
