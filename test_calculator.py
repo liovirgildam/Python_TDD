@@ -28,5 +28,7 @@ class TestCalculator(unittest.TestCase):
     self.assertEqual(calculator.divide(10,2.5), 4)
     self.assertEqual(calculator.divide(11,1),11)
 
+    self.assertRaises(ValueError, calculator.divide, 10, 0)
+    
 if __name__ == '__main__':
   unittest.main()
