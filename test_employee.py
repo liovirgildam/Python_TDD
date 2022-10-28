@@ -19,6 +19,15 @@ class TestEmployee(unittest.TestCase):
         self.assertEqual(self.employee_1.email, 'Serwaa.Addai@email.com')
         self.assertEqual(self.employee_2.email, 'Liovirgilda.Mendonca@email.com')
 
+    def test_fullname(self):
+        self.assertEqual(self.employee_1.fullname, 'Lia Addai')
+        self.assertEqual(self.employee_2.fullname, 'Lili Mendonca')
+
+        self.employee_1.first = 'Serwaa'
+        self.employee_2.first = 'Liovirgilda'
+
+        self.assertEqual(self.employee_1.fullname, 'Serwaa Addai')
+        self.assertEqual(self.employee_2.fullname, 'Liovirgilda Mendonca')
 
 if __name__ == '__main__':
     unittest.main()
